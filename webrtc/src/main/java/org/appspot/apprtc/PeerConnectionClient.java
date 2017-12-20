@@ -207,13 +207,28 @@ public class PeerConnectionClient {
           disableBuiltInNS, enableLevelControl, disableWebRtcAGCAndHPF, null);
     }
 
-    public PeerConnectionParameters(boolean videoCallEnabled, boolean loopback, boolean tracing,
-        int videoWidth, int videoHeight, int videoFps, int videoMaxBitrate, String videoCodec,
-        boolean videoCodecHwAcceleration, boolean videoFlexfecEnabled, int audioStartBitrate,
-        String audioCodec, boolean noAudioProcessing, boolean aecDump, boolean useOpenSLES,
-        boolean disableBuiltInAEC, boolean disableBuiltInAGC, boolean disableBuiltInNS,
-        boolean enableLevelControl, boolean disableWebRtcAGCAndHPF,
-        DataChannelParameters dataChannelParameters) {
+    public PeerConnectionParameters(
+            boolean videoCallEnabled,
+            boolean loopback,
+            boolean tracing,
+            int videoWidth,
+            int videoHeight,
+            int videoFps,
+            int videoMaxBitrate,
+            String videoCodec,
+            boolean videoCodecHwAcceleration,
+            boolean videoFlexfecEnabled,
+            int audioStartBitrate,
+            String audioCodec,
+            boolean noAudioProcessing,
+            boolean aecDump,
+            boolean useOpenSLES,
+            boolean disableBuiltInAEC,
+            boolean disableBuiltInAGC,
+            boolean disableBuiltInNS,
+            boolean enableLevelControl,
+            boolean disableWebRtcAGCAndHPF,
+            DataChannelParameters dataChannelParameters) {
       this.videoCallEnabled = videoCallEnabled;
       this.loopback = loopback;
       this.tracing = tracing;

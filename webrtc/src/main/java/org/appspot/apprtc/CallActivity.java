@@ -167,6 +167,7 @@ public class CallActivity extends Activity implements AppRTCClient.SignalingEven
   private boolean callControlFragmentVisible = true;
   private long callStartedTimeMs = 0;
   private boolean micEnabled = true;
+
   private boolean screencaptureEnabled = false;
   private static Intent mediaProjectionPermissionResultData;
   private static int mediaProjectionPermissionResultCode;
@@ -295,26 +296,37 @@ public class CallActivity extends Activity implements AppRTCClient.SignalingEven
     }
     DataChannelParameters dataChannelParameters = null;
     if (intent.getBooleanExtra(EXTRA_DATA_CHANNEL_ENABLED, false)) {
-      dataChannelParameters = new DataChannelParameters(intent.getBooleanExtra(EXTRA_ORDERED, true),
-          intent.getIntExtra(EXTRA_MAX_RETRANSMITS_MS, -1),
-          intent.getIntExtra(EXTRA_MAX_RETRANSMITS, -1), intent.getStringExtra(EXTRA_PROTOCOL),
-          intent.getBooleanExtra(EXTRA_NEGOTIATED, false), intent.getIntExtra(EXTRA_ID, -1));
+      dataChannelParameters = new DataChannelParameters(
+              intent.getBooleanExtra(EXTRA_ORDERED, true),
+              intent.getIntExtra(EXTRA_MAX_RETRANSMITS_MS, -1),
+              intent.getIntExtra(EXTRA_MAX_RETRANSMITS, -1),
+              intent.getStringExtra(EXTRA_PROTOCOL),
+              intent.getBooleanExtra(EXTRA_NEGOTIATED, false),
+              intent.getIntExtra(EXTRA_ID, -1));
     }
     peerConnectionParameters =
-        new PeerConnectionParameters(intent.getBooleanExtra(EXTRA_VIDEO_CALL, true), loopback,
-            tracing, videoWidth, videoHeight, intent.getIntExtra(EXTRA_VIDEO_FPS, 0),
-            intent.getIntExtra(EXTRA_VIDEO_BITRATE, 0), intent.getStringExtra(EXTRA_VIDEOCODEC),
-            intent.getBooleanExtra(EXTRA_HWCODEC_ENABLED, true),
-            intent.getBooleanExtra(EXTRA_FLEXFEC_ENABLED, false),
-            intent.getIntExtra(EXTRA_AUDIO_BITRATE, 0), intent.getStringExtra(EXTRA_AUDIOCODEC),
-            intent.getBooleanExtra(EXTRA_NOAUDIOPROCESSING_ENABLED, false),
-            intent.getBooleanExtra(EXTRA_AECDUMP_ENABLED, false),
-            intent.getBooleanExtra(EXTRA_OPENSLES_ENABLED, false),
-            intent.getBooleanExtra(EXTRA_DISABLE_BUILT_IN_AEC, false),
-            intent.getBooleanExtra(EXTRA_DISABLE_BUILT_IN_AGC, false),
-            intent.getBooleanExtra(EXTRA_DISABLE_BUILT_IN_NS, false),
-            intent.getBooleanExtra(EXTRA_ENABLE_LEVEL_CONTROL, false),
-            intent.getBooleanExtra(EXTRA_DISABLE_WEBRTC_AGC_AND_HPF, false), dataChannelParameters);
+        new PeerConnectionParameters(
+                intent.getBooleanExtra(EXTRA_VIDEO_CALL, true),
+                loopback,
+                tracing,
+                videoWidth,
+                videoHeight,
+                intent.getIntExtra(EXTRA_VIDEO_FPS, 0),
+                intent.getIntExtra(EXTRA_VIDEO_BITRATE, 0),
+                intent.getStringExtra(EXTRA_VIDEOCODEC),
+                intent.getBooleanExtra(EXTRA_HWCODEC_ENABLED, true),
+                intent.getBooleanExtra(EXTRA_FLEXFEC_ENABLED, false),
+                intent.getIntExtra(EXTRA_AUDIO_BITRATE, 0),
+                intent.getStringExtra(EXTRA_AUDIOCODEC),
+                intent.getBooleanExtra(EXTRA_NOAUDIOPROCESSING_ENABLED, false),
+                intent.getBooleanExtra(EXTRA_AECDUMP_ENABLED, false),
+                intent.getBooleanExtra(EXTRA_OPENSLES_ENABLED, false),
+                intent.getBooleanExtra(EXTRA_DISABLE_BUILT_IN_AEC, false),
+                intent.getBooleanExtra(EXTRA_DISABLE_BUILT_IN_AGC, false),
+                intent.getBooleanExtra(EXTRA_DISABLE_BUILT_IN_NS, false),
+                intent.getBooleanExtra(EXTRA_ENABLE_LEVEL_CONTROL, false),
+                intent.getBooleanExtra(EXTRA_DISABLE_WEBRTC_AGC_AND_HPF, false),
+                dataChannelParameters);
     commandLineRun = intent.getBooleanExtra(EXTRA_CMDLINE, false);
     runTimeMs = intent.getIntExtra(EXTRA_RUNTIME, 0);
 
@@ -735,8 +747,12 @@ public class CallActivity extends Activity implements AppRTCClient.SignalingEven
     if (peerConnectionParameters.videoCallEnabled) {
       videoCapturer = createVideoCapturer();
     }
-    peerConnectionClient.createPeerConnection(rootEglBase.getEglBaseContext(), localProxyRenderer,
-        remoteRenderers, videoCapturer, signalingParameters);
+    peerConnectionClient.createPeerConnection(
+            rootEglBase.getEglBaseContext(),
+            localProxyRenderer,
+            remoteRenderers,
+            videoCapturer,
+            signalingParameters);
 
     if (signalingParameters.initiator) {
       logAndToast("Creating OFFER...");

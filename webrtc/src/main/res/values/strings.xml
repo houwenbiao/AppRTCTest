@@ -52,12 +52,13 @@
     <string name="pref_resolution_key">resolution_preference</string>
     <string name="pref_resolution_title">Video resolution.</string>
     <string name="pref_resolution_dlg">Enter AppRTC local video resolution.</string>
-    <string name="pref_resolution_default">Default</string>
-
+    <!--<string name="pref_resolution_default">Default</string>-->
+    <string name="pref_resolution_default">640 x 480</string>
     <string name="pref_fps_key">fps_preference</string>
     <string name="pref_fps_title">Camera fps.</string>
     <string name="pref_fps_dlg">Enter local camera fps.</string>
-    <string name="pref_fps_default">Default</string>
+    <!--<string name="pref_fps_default">Default</string>-->
+    <string name="pref_fps_default">15 fps</string>
 
     <string name="pref_capturequalityslider_key">capturequalityslider_preference</string>
     <string name="pref_capturequalityslider_title">Capture quality slider.</string>
@@ -73,12 +74,13 @@
     <string name="pref_maxvideobitratevalue_title">Video encoder maximum bitrate.</string>
     <string name="pref_maxvideobitratevalue_dlg">Enter video encoder maximum bitrate in kbps.</string>
     <string name="pref_maxvideobitratevalue_default">1700</string>
+    <string name="pref_startvideobitratevalue_default">1000</string>
 
     <string name="pref_videocodec_key">videocodec_preference</string>
     <string name="pref_videocodec_title">Default video codec.</string>
     <string name="pref_videocodec_dlg">Select default video codec.</string>
-    <string name="pref_videocodec_default">VP8</string>
-
+    <!--<string name="pref_videocodec_default">VP8</string>-->
+    <string name="pref_videocodec_default">H264</string>
     <string name="pref_hwcodec_key">hwcodec_preference</string>
     <string name="pref_hwcodec_title">Video codec hardware acceleration.</string>
     <string name="pref_hwcodec_dlg">Use hardware accelerated video codec (if available).</string>
@@ -103,7 +105,7 @@
     <string name="pref_startaudiobitrate_key">startaudiobitrate_preference</string>
     <string name="pref_startaudiobitrate_title">Audio bitrate setting.</string>
     <string name="pref_startaudiobitrate_dlg">Audio bitrate setting.</string>
-    <string name="pref_startaudiobitrate_default">Default</string>
+    <string name="pref_startaudiobitrate_default">1000</string>
 
     <string name="pref_startaudiobitratevalue_key">startaudiobitratevalue_preference</string>
     <string name="pref_startaudiobitratevalue_title">Audio codec bitrate.</string>
@@ -202,7 +204,9 @@
     <string name="pref_room_server_url_key">room_server_url_preference</string>
     <string name="pref_room_server_url_title">Room server URL.</string>
     <string name="pref_room_server_url_dlg">Enter a room server URL.</string>
-    <string name="pref_room_server_url_default" translatable="false">https://appr.tc</string>
+    <!--<string name="pref_room_server_url_default" translatable="false">https://appr.tc</string>-->
+    <string name="pref_room_server_url_default" translatable="false">http://121.42.34.191:8080</string>
+    <string name="pref_signal_server_url" translatable="false">ws://121.42.34.191:8088</string>
 
     <string name="pref_displayhud_key">displayhud_preference</string>
     <string name="pref_displayhud_title">Display call statistics.</string>
