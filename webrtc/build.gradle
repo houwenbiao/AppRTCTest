@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 23
-  buildToolsVersion '25.0.0'
+  compileSdkVersion 26
+  buildToolsVersion '26.0.2'
 
   sourceSets.main {
     jniLibs.srcDir 'libs'
@@ -13,7 +13,7 @@ android {
   defaultConfig {
     applicationId "org.appspot.apprtc"
     minSdkVersion 16
-    targetSdkVersion 21
+    targetSdkVersion 26
 
     versionCode 15663
     versionName "r15663"
@@ -32,11 +32,15 @@ android {
   lintOptions {
     abortOnError false
   }
+  compileOptions {
+    targetCompatibility 1.8
+    sourceCompatibility 1.8
+  }
 }
 
 dependencies {
   compile files('libs/audio_device_java.jar')
   compile files('libs/autobanh.jar')
   compile files('libs/base_java.jar')
-  compile files('libs/libjingle_peerconnection.jar')
+  compile files('libs/libjingle_peerconnection_java.jar')
 }

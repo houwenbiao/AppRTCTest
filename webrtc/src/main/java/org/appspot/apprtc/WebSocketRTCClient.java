@@ -421,7 +421,7 @@ public class WebSocketRTCClient implements AppRTCClient, WebSocketChannelEvents 
   }
 
   // Converts a JSON candidate to a Java object.
-  private IceCandidate toJavaCandidate(JSONObject json) throws JSONException {
+  IceCandidate toJavaCandidate(JSONObject json) throws JSONException {
     return new IceCandidate(
         json.getString("id"), json.getInt("label"), json.getString("candidate"));
   }
