@@ -666,7 +666,14 @@ public class CallActivity extends Activity implements AppRTCClient.SignalingEven
         } else {
             setResult(RESULT_CANCELED);
         }
-        finish();
+        getWindow().getDecorView().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (!isFinishing()) {
+                    finish();
+                }
+            }
+        }, 2000);
     }
 
     private void disconnectWithErrorMessage(final String errorMessage) {
