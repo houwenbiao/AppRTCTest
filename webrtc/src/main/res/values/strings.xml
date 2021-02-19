@@ -205,7 +205,7 @@
     <string name="pref_room_server_url_title">Room server URL.</string>
     <string name="pref_room_server_url_dlg">Enter a room server URL.</string>
     <!--<string name="pref_room_server_url_default" translatable="false">https://appr.tc</string>-->
-    <string name="pref_room_server_url_default" translatable="false">http://121.42.34.191:8080</string>
+    <string name="pref_room_server_url_default" translatable="false">http://121.42.34.191:8082</string>
     <string name="pref_signal_server_url" translatable="false">ws://121.42.34.191:8088</string>
 
     <string name="pref_displayhud_key">displayhud_preference</string>

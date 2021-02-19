@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 26
-  buildToolsVersion '26.0.2'
+  compileSdkVersion 28
+  buildToolsVersion '28.0.2'
 
   sourceSets.main {
     jniLibs.srcDir 'libs'
@@ -13,7 +13,7 @@ android {
   defaultConfig {
     applicationId "org.appspot.apprtc"
     minSdkVersion 16
-    targetSdkVersion 26
+    targetSdkVersion 28
 
     versionCode 15663
     versionName "r15663"
@@ -43,4 +43,7 @@ dependencies {
   compile files('libs/autobanh.jar')
   compile files('libs/base_java.jar')
   compile files('libs/libjingle_peerconnection_java.jar')
+  // RxJava
+  implementation 'io.reactivex:rxjava:1.1.2'
+  implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
 }
